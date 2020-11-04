@@ -17,4 +17,7 @@ For example:
 
 ```
 include(${CMAKE_CURRENT_LIST_DIR}/external/cmake_start/CMakeLists.txt)
+target_link_libraries(${PROJECT_NAME} PRIVATE
+        START
+        )
 ```
