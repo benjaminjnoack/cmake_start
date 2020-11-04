@@ -30,7 +30,7 @@ echo "        )
 
 target_sources(BOOTLOADER_START PRIVATE" >> $CMAKE
 
-find $SRC -type f | grep -iv example | while read line ; do
+find $SRC -type f -name "*.c" | grep -iv example | while read line ; do
    echo -e "\t\${CMAKE_CURRENT_LIST_DIR}/$line" >> $CMAKE
 done
 
