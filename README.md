@@ -2,7 +2,7 @@ CMake generator for Atmel START
 
 **usage**
 
-Configure the project using [Atmel START](https://start.atmel.com/)
+Configure a project using [Atmel START](https://start.atmel.com/)
 
 * Export Project -> Download Pack
 * Copy the downloaded `*.atzip` file to the root directory of this project as `start.atzip`.
