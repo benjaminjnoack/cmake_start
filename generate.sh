@@ -20,7 +20,9 @@ unzip -d ./ $INPUT_FILE > /dev/null 2>&1
 find ./ -type f -exec dos2unix {} \; 2> /dev/null
 
 # these directories contain source code for other compilers and will throw errors when given to gcc
-rm -fr ./samc21/armcc
+find ./ -type d -iname "armcc" | xargs -L 1 rm -rf
+find ./ -type d -iname "RVDS" | xargs -L 1 rm -rf
+find ./ -type d -iname "IAR" | xargs -L 1 rm -rf
 # we don't need their main
 rm -f ./main.c
 
