@@ -1,2 +1,3 @@
 *.atzip
+CMakeLists.txt
 src/
