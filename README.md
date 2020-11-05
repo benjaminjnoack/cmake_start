@@ -5,15 +5,19 @@ CMake generator for Atmel START
 * Configure a project using [Atmel START](https://start.atmel.com/)
 * Export Project -> Download Pack
 * Run the `generate.sh` script with the following arguments:
-	1. path to START `*.atzip` file
-	2. _absolute_ path to output directory
-		* _NOTE: this directory will be emptied prior to source extraction and CMake generation!_
+	1. `INPUT_FILE`
+		* _absolute_ path to Atmel START `*.atzip` file
+	2. `OUTPUT_DIR`
+		* absolute path to output directory
+		* NOTE: this directory will be emptied prior to source extraction and CMake generation!
+	3. `OUTPUT_LIB`
+		* name for library to build
 
 
 For example:
 
 ```
-$ ./generate.sh ~/projects/boot2/boot.atzip /home/ben/test
+$ ./generate.sh ~/projects/boot2/boot.atzip /home/ben/test START
 ```
 
 The source from `*.atzip` will be extracted into the provided output directory.
@@ -26,6 +30,6 @@ For example:
 ```
 include(${CMAKE_CURRENT_LIST_DIR}/external/cmake_start/CMakeLists.txt)
 target_link_libraries(${PROJECT_NAME} PRIVATE
-        START
+        $OUTPUT_LIB
         )
 ```
